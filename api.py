@@ -47,7 +47,7 @@ def ner(text):
 
 def summarize_text(text):
     client = InferenceClient(
-        token="hf_your_actual_token_here",  # Replace with your Hugging Face token
+        token="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",  # Replace with your Hugging Face token
     )
 
     result = client.text_generation(

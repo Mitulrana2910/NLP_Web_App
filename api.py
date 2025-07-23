@@ -2,7 +2,7 @@ from huggingface_hub import InferenceClient
 from transformers import pipeline
 def sent(text):
     client = InferenceClient(
-        token="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",  # your token
+        token="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",  # your token
     )
 
     text_input = text
@@ -47,7 +47,7 @@ def ner(text):
 
 def summarize_text(text):
     client = InferenceClient(
-        token="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",  # Replace with your Hugging Face token
+        token="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",  # Replace with your Hugging Face token
     )
 
     result = client.text_generation(

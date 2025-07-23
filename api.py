@@ -54,7 +54,7 @@ def summarize_text(text):
         model="sshleifer/distilbart-cnn-12-6",
     )
 
-    return f"\n📄 Summary:\n {result}"
+    return f"\n📄 Summary:\n {result.summary_text}"
 
 """
 For summrization

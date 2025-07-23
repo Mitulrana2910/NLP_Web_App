@@ -19,7 +19,7 @@ A simple Flask-based web application for performing various analytical procedure
 ---
 
 ## 📁 Project Structure
-
+```
 NLP_Web_App/
 │
 ├── app.py # Main Flask app (routing & server setup)

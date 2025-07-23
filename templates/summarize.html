@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Sorry! This feature will be available soon.</h3>
+    <form action="/perform_summ" method="post">
+        <label placeholder="Type your text here">Enter text for Summarization : </label><br>
+        <textarea name="sum_txt" required></textarea><br>
+        <input type="Submit" value="Summarize" required>
+    </form>
+    {% if result %}
+        <p>{{result}}</p>
+    {% endif %}
 </body>
 </html>

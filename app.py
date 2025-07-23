@@ -20,7 +20,7 @@ def index(): # Using "/" means whenever someone type '/' before url let say http
 def register():
     return render_template('register.html')
 
-@app.route('/perform_reg',methods=['post'])
+@app.route('/perform_reg',methods=['POST'])
 def perform_reg():
     name = request.form.get('u_name')
     email = request.form.get('u_email')
@@ -34,7 +34,7 @@ def perform_reg():
         return render_template("register.html", message="Email Already Exists.", message_type="error")
 
 
-@app.route('/perform_login',methods=['post'])
+@app.route('/perform_login',methods=['POST'])
 def perform_login():
     email = request.form.get('u_email')
     pwd = request.form.get('u_pwd')
@@ -54,7 +54,7 @@ def profile():
 def ner():
     return render_template('ner.html')
 
-@app.route('/perform_ner',methods=['post'])
+@app.route('/perform_ner',methods=['POST'])
 def perform_ner():
     text = request.form.get('ner_txt')
     response = api.ner(text)
@@ -66,7 +66,7 @@ def perform_ner():
 def sentiment():
     return render_template('sentiment.html')
 
-@app.route('/perform_sent',methods=['post'])
+@app.route('/perform_sent',methods=['POST'])
 def perform_sent():
     text = request.form.get('sent_txt')
     response = api.sent(text)
@@ -79,14 +79,14 @@ def perform_sent():
 def summarize():
     return render_template('summarize.html')
 
-@app.route('/perform_summ')
+@app.route('/perform_summ', methods=['POST'])
 def perform_summ():
     text = request.form.get('sum_txt')
-    response = api.sent(text)
+    response = api.summarize_text(text)
     print(response)
-    result=''
-    result = api.sent(text)
+    result = response
     return render_template('summarize.html', result=result)
+
 
 
 app.run(debug=True) # Using debug=True means you just have to refresh the page and changes will appear.

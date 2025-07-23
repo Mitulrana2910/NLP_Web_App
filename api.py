@@ -3,7 +3,7 @@ from transformers import pipeline
 
 def sent(text):
     client = InferenceClient(
-        token="",  # your token
+        token="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",  # your token
     )
 
     text_input = text

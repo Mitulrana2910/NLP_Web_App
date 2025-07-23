@@ -1,6 +1,6 @@
-# 🧠 NLP Web App - Sentiment Analysis
+# 🧠 NLP Web App
 
-A simple Flask-based web application for performing **Sentiment Analysis** using Natural Language Processing (NLP). Users can enter text and get instant sentiment predictions like *Positive* or *Negative*.
+A simple Flask-based web application for performing various analytical procedures using Natural Language Processing (NLP). Users can enter text and get instant sentiment predictions like *Positive* or *Negative*.
 
 ## 🚀 Features
 

@@ -1,10 +1,7 @@
 from huggingface_hub import InferenceClient
 from transformers import pipeline
 def sent(text):
-    client = InferenceClient(
-        token="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",  # your token
-    )
-
+    client = InferenceClient(token=os.getenv("HUGGINGFACE_TOKEN"))
     text_input = text
 
     result = client.text_classification(
@@ -46,7 +43,7 @@ def ner(text):
     return named_entities
 
 def summarize_text(text):
-    client = InferenceClient(token="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")
+   client = InferenceClient(token=os.getenv("HUGGINGFACE_TOKEN"))
 
 
     result = client.summarization(

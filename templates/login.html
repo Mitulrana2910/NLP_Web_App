@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login NLP WebApp</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>NLP App</h1>
+    <h3>Login Here</h3>
+    
+    {%if message:%}
+        <p style="color:red">{{message}}</p>
+    {%endif%}
+    
+    <form action="/perform_login" method="post">
+        <label>Email</label><br>
+        <input type="email" name="u_email" required><br>
+        <label>Password</label><br>
+        <input type="password" name="u_pwd" required><br><br>
+        <input type="submit" value="Login Now"><br>
+    </form>
+    
+    <p>Not a member? <a href="register" style="color:darkcyan">Register Here</a></p><br>
+
+</body>
+</html>

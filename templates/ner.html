@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/perform_ner" method="post">
+        <label placeholder="Type your text here">Enter text for NER : </label><br>
+        <textarea name="ner_txt" required></textarea><br>
+        <input type="submit" value="Perform NER" required>
+    </form>
+    {% if response %}
+        {%for e in response:%}
+            <p>Entity: {{ e.word }}<br>Type: {{ e.type }}<br>Score: {{ e.score }}</p>
+        {%endfor%}
+    {% endif %}
+    
+</body>
+</html>

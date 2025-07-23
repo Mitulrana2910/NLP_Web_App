@@ -1,7 +1,13 @@
+import os
 from huggingface_hub import InferenceClient
 from transformers import pipeline
+from dotenv import load_dotenv
+
+load_dotenv()
+
 def sent(text):
     client = InferenceClient(token=os.getenv("HUGGINGFACE_TOKEN"))
+
     text_input = text
 
     result = client.text_classification(
@@ -43,7 +49,7 @@ def ner(text):
     return named_entities
 
 def summarize_text(text):
-   client = InferenceClient(token=os.getenv("HUGGINGFACE_TOKEN"))
+    client = InferenceClient(token=os.getenv("HUGGINGFACE_TOKEN"))
 
 
     result = client.summarization(
@@ -52,6 +58,7 @@ def summarize_text(text):
     )
 
     return f"\n📄 Summary:\n {result.summary_text}"
+
 
 """
 For summrization

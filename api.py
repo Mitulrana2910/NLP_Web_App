@@ -1,6 +1,5 @@
 from huggingface_hub import InferenceClient
 from transformers import pipeline
-
 def sent(text):
     client = InferenceClient(
         token="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",  # your token
@@ -46,6 +45,19 @@ def ner(text):
 
     return named_entities
 
+def summarize_text(text):
+    client = InferenceClient(
+        token="hf_your_actual_token_here",  # Replace with your Hugging Face token
+    )
+
+    result = client.text_generation(
+        prompt=text,
+        model="sshleifer/distilbart-cnn-12-6",  # A good summarization model
+        max_new_tokens=100,
+        temperature=0.7,
+    )
+
+    return f"\n📄 Summary:\n{result}"
 
 """
 For summrization

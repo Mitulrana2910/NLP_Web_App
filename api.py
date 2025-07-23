@@ -46,18 +46,15 @@ def ner(text):
     return named_entities
 
 def summarize_text(text):
-    client = InferenceClient(
-        token="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",  # Replace with your Hugging Face token
+    client = InferenceClient(token="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")
+
+
+    result = client.summarization(
+        text,
+        model="sshleifer/distilbart-cnn-12-6",
     )
 
-    result = client.text_generation(
-        prompt=text,
-        model="sshleifer/distilbart-cnn-12-6",  # A good summarization model
-        max_new_tokens=100,
-        temperature=0.7,
-    )
-
-    return f"\n📄 Summary:\n{result}"
+    return f"\n📄 Summary:\n {result}"
 
 """
 For summrization

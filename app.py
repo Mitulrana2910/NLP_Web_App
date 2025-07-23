@@ -79,6 +79,14 @@ def perform_sent():
 def summarize():
     return render_template('summarize.html')
 
+@app.route('/perform_summ')
+def perform_summ():
+    text = request.form.get('sum_txt')
+    response = api.sent(text)
+    print(response)
+    result=''
+    result = api.sent(text)
+    return render_template('summarize.html', result=result)
 
 
 app.run(debug=True) # Using debug=True means you just have to refresh the page and changes will appear.

@@ -1,33 +1,33 @@
-# 👉 Python bytecode and compiled files
+# Python bytecode and compiled files
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 *.pyc
 
-# 👉 Virtual environment
+# Virtual environment
 venv/
 env/
 ENV/
 
-# 👉 Environment variable and secrets
+# Environment variables and secrets
 .env
 *.env
 
-# 👉 VS Code and IDE settings
+# VS Code and IDE settings
 .vscode/
 .idea/
 
-# 👉 OS-specific files
+# OS-specific files
 .DS_Store
 Thumbs.db
 
-# 👉 Jupyter notebook checkpoints (if used)
+# Jupyter notebook checkpoints
 .ipynb_checkpoints/
 
-# 👉 Vercel build output (optional)
+# Vercel build output
 .vercel/
 
-# 👉 Logs and temp files
+# Logs and temp files
 *.log
 *.tmp

@@ -42,6 +42,30 @@ NLP_Web_App/
 └── README.md # Project documentation
 ```
 
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+```
+NLP_Web_App/
+│
+├── app.py # Main Flask app (routing & server setup)
+├── api.py # Hugging Face API integration (sentiment, NER, summarization)
+├── db.py # User management logic (login, registration, etc.)
+├── users.json # JSON file to store registered user data
+│
+├── static/ # Static assets (CSS, favicon)
+│ ├── favicon.ico # Favicon for the web app
+│ └── style.css # Main stylesheet
+│
+├── templates/ # HTML templates for all web pages
+│ ├── login.html # Login page
+│ ├── register.html # Registration page
+│ ├── profile.html # User dashboard with analysis options
+│ ├── ner.html # Named Entity Recognition page
+│ ├── sentiment.html # Sentiment Analysis page
+│ └── summarize.html # Text Summarization page
+│
+└── README.md # Project documentation
+

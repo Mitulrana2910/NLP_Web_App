@@ -5,6 +5,7 @@
 # Language detection
 # from django.contrib.messages.context_processors import messages
 # import pyngrok
+import os
 from flask import Flask,render_template,request,redirect,session
 from db import Database
 import api
@@ -89,6 +90,10 @@ def perform_summ():
 
 
 
-app.run(debug=True) # Using debug=True means you just have to refresh the page and changes will appear.
+
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
+
+# app.run(debug=True) # Using debug=True means you just have to refresh the page and changes will appear.
 
 

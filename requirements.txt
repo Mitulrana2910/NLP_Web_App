@@ -1,3 +1,4 @@
+gunicorn
 flask
 huggingface_hub
 python-dotenv

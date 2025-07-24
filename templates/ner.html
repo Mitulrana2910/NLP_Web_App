@@ -15,6 +15,7 @@
         <input type="submit" value="Perform NER" required>
     </form>
     {% if response %}
+        <p>📌 Named Entities : </p>
         {%for e in response:%}
             <p>Entity: {{ e.word }}<br>Type: {{ e.type }}<br>Score: {{ e.score }}</p>
         {%endfor%}

@@ -4,7 +4,7 @@
 # Sentiment analysis
 # Language detection
 # from django.contrib.messages.context_processors import messages
-import pyngrok
+# import pyngrok
 from flask import Flask,render_template,request,redirect,session
 from db import Database
 import api

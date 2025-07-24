@@ -1,9 +1,23 @@
 import os
-from huggingface_hub import InferenceClient
-from transformers import pipeline
 from dotenv import load_dotenv
+# from transformers import pipelines
+from huggingface_hub import InferenceClient
 
 load_dotenv()
+
+def ner(text):
+    client = InferenceClient(token=os.getenv("HUGGINGFACE_TOKEN"))
+    result = client.token_classification(text=text, model="dslim/bert-base-NER")
+
+    named_entities = []
+    for entity in result:
+        named_entities.append({
+            "word": entity["word"],
+            "type": entity["entity_group"],
+            "score": round(entity["score"], 3)
+        })
+
+    return named_entities  # ✅ returning list of dicts
 
 def sent(text):
     client = InferenceClient(token=os.getenv("HUGGINGFACE_TOKEN"))
@@ -30,23 +44,8 @@ classifier(text_input)
 ## [{'label': 'ENTAILMENT', 'score': 0.98}]
 
 """
-def ner(text):
-    # Load once globally (efficient for repeated calls)
-    classifier = pipeline("ner", model="dslim/bert-base-NER", grouped_entities=True)
-    result = classifier(text)
-    named_entities = []
 
-    for entity in result:
-        group = entity['entity_group']
-        word = entity['word']
-        score = entity['score']
-        named_entities.append({
-            "word": word,
-            "type": group,
-            "score": round(score, 3)
-        })
-
-    return named_entities
+  # Load the environment variables from .env
 
 def summarize_text(text):
     client = InferenceClient(token=os.getenv("HUGGINGFACE_TOKEN"))
@@ -58,6 +57,11 @@ def summarize_text(text):
     )
 
     return f"\n📄 Summary:\n {result.summary_text}"
+
+
+
+
+
 
 
 """
